@@ -1,0 +1,65 @@
+
+---
+title: "FARSr: A Package for Traffic Accident Data Analysis in the US."
+author: "Yi Xiong"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Traffic Accident Data Analysis}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Functions
+
+This package includes some useful function to analyze the data in FARS that were
+
+- `fars_read`: Read data from FARS
+- `make_filename`: Make file name with a given year
+- `fars_read_years`: Read mulitple FARS data files
+- `fars_map_state`: Visualize the accidents in the US map in a given year, state
+- `fars_summarize_years`: Summarize the number of observations by year
+
+
+# Read FARS Data
+
+Through `fars_read`, we can read the FARS data that was saved by csv file with ".bz2" extension. 
+
+```{r}
+library(FARSr)
+file <- system.file("extdata", "accident_2015.csv.bz2", package = "FARSr")
+data <- fars_read(file)
+head(data)
+```
+
+
+# Summary of FARS Data
+
+The `fars_summarize_years` can return the pivot table with the number of monthly accident cases (row) and the defined year(s) (column). Here the input parameter should be a numeric vector.
+
+```{r}
+setwd(system.file("extdata", package = "FARSr"))
+fars_summarize_years(2013:2015)
+```
+
+
+# Visualization of accident locations
+
+The `fars_map_state` returns a map with the plot of the state with accident locations. The State index was defined from 1 to 56.
+
+```{r}
+setwd(system.file("extdata", package = "FARSr"))
+unique(data$STATE) # 56
+par(mfrow = c(1,3))
+for (i in 2013:2015) {
+  fars_map_state(50, i)
+  mtext(paste(i))
+}
+```
