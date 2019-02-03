@@ -53,8 +53,6 @@ make_filename <- function(year) {
 #' @import magrittr
 #' @importFrom dplyr mutate
 #' @importFrom dplyr select
-#' @importFrom FARSr make_filename
-#' @importFrom FARSr fars_read
 #'
 #' @param years A vector of years.
 #'
@@ -82,7 +80,6 @@ fars_read_years <- function(years) {
 #' This is a simple function for calculating
 #' a summary of total accidents grouped by month and year.
 #'
-#' @importFrom FARSr fars_read_years
 #' @import dplyr
 #' @import tidyr
 #'
