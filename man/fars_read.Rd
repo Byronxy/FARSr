@@ -19,6 +19,6 @@ stops with the message "file 'filename' does not exist"
 If a filename exist, the file will be read in this function as an imported data
 }
 \examples{
-fars_read("accident_2013.csv.bz2")
-data <- fars_read("accident_2014.csv.bz2")
+fars_read(system.file("extdata", "accident_2015.csv.bz2", package = "FARSr"))
+data <- fars_read(system.file("extdata", "accident_2014.csv.bz2", package = "FARSr"))
 }
