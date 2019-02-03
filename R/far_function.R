@@ -14,8 +14,8 @@
 #' @return a dataframe containing a representation of the data with class of tibble
 #'
 #' @examples
-#' fars_read("accident_2013.csv.bz2")
-#' data <- fars_read("accident_2014.csv.bz2")
+#' fars_read(system.file("extdata", "accident_2015.csv.bz2", package = "FARSr"))
+#' data <- fars_read(system.file("extdata", "accident_2014.csv.bz2", package = "FARSr"))
 #' @export
 fars_read <- function(filename) {
   if(!file.exists(filename))
@@ -57,7 +57,6 @@ make_filename <- function(year) {
 #'
 #' @return A list of data frames.
 #'
-#' @example fars_read_years(c(2013, 2014, 2015))
 #'
 #' @export
 fars_read_years <- function(years) {
@@ -86,7 +85,6 @@ fars_read_years <- function(years) {
 #'
 #' @return A data frame summarising number of accidents grouped by month and year.
 #'
-#' @example fars_summarize_years(c(2013, 2014, 2015))
 #'
 #' @export
 fars_summarize_years <- function(years) {
@@ -118,9 +116,6 @@ fars_summarize_years <- function(years) {
 #'
 #' @return A map with accidents plotted on the map for the selected year and selected state number.
 #'
-#' @example fars_map_state(10, 2015)
-#' @example fars_map_state(10, 2016) # file 'accident_2016.csv.bz2' does not exist
-#' @example fars_map_state(60, 2015) # invalid STATE number: 60
 #'
 #' @export
 fars_map_state <- function(state.num, year) {
