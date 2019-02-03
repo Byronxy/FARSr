@@ -53,8 +53,8 @@ make_filename <- function(year) {
 #' @import magrittr
 #' @importFrom dplyr mutate
 #' @importFrom dplyr select
-#' @import make_filename
-#' @import fars_read
+#' @importFrom FARSr make_filename
+#' @importFrom FARSr fars_read
 #'
 #' @param years A vector of years.
 #'
@@ -82,7 +82,7 @@ fars_read_years <- function(years) {
 #' This is a simple function for calculating
 #' a summary of total accidents grouped by month and year.
 #'
-#' @import fars_read_years
+#' @importFrom FARSr fars_read_years
 #' @import dplyr
 #' @import tidyr
 #'
@@ -109,8 +109,7 @@ fars_summarize_years <- function(years) {
 #' The "state.num" should be valid otherwise the function would stop
 #' and show the message "invalid STATE number: 'state.num'".
 #'
-#' @import make_filename
-#' @import fars_read
+#'
 #' @importFrom dplyr filter
 #' @importFrom maps map
 #' @importFrom graphics points
