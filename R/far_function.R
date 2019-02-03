@@ -50,7 +50,6 @@ make_filename <- function(year) {
 #' It generates a list of data frames,
 #' where each file is a data frame that's part of the list.
 #'
-#' @import magrittr
 #' @importFrom dplyr mutate
 #' @importFrom dplyr select
 #'
