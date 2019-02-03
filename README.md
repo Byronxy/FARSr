@@ -6,12 +6,12 @@ FARSr Package
 FARSr is an Accident Data Analysis R package developped in the 3rd course of the "Mastering Software Development in R Specialization" by Johns Hopkins University on Coursera: "Building R Packages"
 
 Installation
+------------
 
 You can install the package via `devtools` from the github
-```
-# install.packages("devtools")
-install_github("Byronxy/FARSr")
-```
+
+    # install.packages("devtools")
+    install_github("Byronxy/FARSr")
 
 Instructions
 ------------
